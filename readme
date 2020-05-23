@@ -1,12 +1,23 @@
 git init
 
-
 git add .
-
 
 git commit -m '初始提交，动态代理内容'
 
-$ git remote add origin https://github.com/sunhuimingzxc/design-pattern.git
+git remote add origin https://github.com/sunhuimingzxc/design-pattern.git
+
+git push -u origin master
+
+1.填坑：若创建仓库的时候勾选创建readme文件，则需要执行已下命令，然后再push
+git pull --rebase origin master
+
+2.本地仓库与远程仓库建立SSH的过程
+先看一下你C盘用户目录下有没有.ssh目录，有的话看下里面有没有id_rsa和id_rsa.pub这两个文件，有就跳到下一步，没有就通过下面命令创建
+ssh-keygen -t rsa -C "huiming.sun@aliyun.com"
+然后一路回车。这时你就会在用户下的.ssh目录里找到id_rsa和id_rsa.pub这两个文件
+然后登录Github,找到右上角的图标，打开点进里面的Settings，再选中里面的SSH and GPG KEYS，点击右上角的New SSH key，然后Title里面随便填，
+再把刚才id_rsa.pub里面的内容复制到Title下面的Key内容框里面，最后点击Add SSH key，这样就完成了SSH Key的加密
+
 
 上传项目到git：
 https://www.zhihu.com/search?type=content&q=%20%E4%B8%8A%E4%BC%A0%E9%A1%B9%E7%9B%AE%E5%88%B0GIT
